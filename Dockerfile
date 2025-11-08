@@ -2,7 +2,7 @@ FROM texlive/texlive:latest
 
 # Install Python and Flask
 RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install flask gunicorn
+RUN pip3 install --break-system-packages flask gunicorn
 
 # Copy application
 COPY app.py /app/app.py
